@@ -1,5 +1,5 @@
 package question1;
-import java.util.*;
+
 public class Student {
 	private int roll;
 	private String name;
@@ -22,64 +22,53 @@ public class Student {
 	public int getMarks() {
 		return marks;
 	}
-	public void setMarks(int marks) {
-		this.marks = marks;
-	}
 	public char getGrade() {
 		return grade;
 	}
 	public void setGrade(char grade) {
 		this.grade = grade;
-	};
+	}
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
 	
+	
+	
+	
+	public void displayDetails(Student student) {
+		
+		System.out.println(student);
+		calculateGrade(student) ;
+		
+		
+		
+	};
+	private void calculateGrade(Student student) {
+		
+		int marks=student.getMarks();
+		
+		if( marks <400) {
+			System.out.println(marks);
+			char grade=67;
+			student.setGrade(grade);
+		}
+		else if (marks >=400&&marks < 500 ) {
+			char grade=66;
+			student.setGrade(grade);
+		}
+		else if( marks>=500 ) {
+			char grade=65;
+			student.setGrade(grade); 
+		}
+		
+		//return student.grade=grade;
+		
+	}
 	
 	@Override
 	public String toString() {
 		return "Student [roll=" + roll + ", name=" + name + ", marks=" + marks + ", grade=" + 
 	grade + "]";
-	}
-	public void displayDetails() {
-		
-		Scanner sc=new Scanner(System.in);
-		
-		Student student=new Student();
-		
-		System.out.println("Enter Name");
-		String name=sc.nextLine();
-		student.setName(name);
-		
-		System.out.println("Enter Roll Number");
-		int roll=sc.nextInt();
-		student.setRoll(roll);
-		
-		System.out.println("Enter Marks");
-		int marks=sc.nextInt();
-		student.setMarks(marks);
-		
-		
-		
-		
-		System.out.println("student Name :"+student.getName());
-		System.out.println("student Roll Number :"+student.getRoll());
-		System.out.println("student Marks :"+student.getMarks());
-		System.out.println("student Grade :"+student.calculateGrade());
-		
-	};
-	private char calculateGrade() {
-		int marks=getMarks();
-		
-		if( marks >=500) {
-			return  65;
-		}
-		else if (marks < 500 &&marks >=400) {
-			return 67;
-		}
-		else if( marks <400 ) {
-			return 68;
-		}
-		return grade;
-		
-		
 	}
 	
 

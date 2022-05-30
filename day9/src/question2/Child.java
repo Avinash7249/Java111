@@ -1,6 +1,6 @@
 package question2;
 
-class Child extends Parent{
+final class Child extends Parent{
 	
 	
    public Child(int number) {
