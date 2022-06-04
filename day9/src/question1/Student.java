@@ -36,9 +36,9 @@ public class Student {
 	
 	
 	public void displayDetails(Student student) {
-		
-		System.out.println(student);
 		calculateGrade(student) ;
+		System.out.println(student);
+		
 		
 		
 		

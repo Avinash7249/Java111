@@ -11,17 +11,31 @@ public class Person {
 	
 	Address address;
 
-	@Override
-	public String toString() {
-		return "Person [name=" + name + ", gender=" + gender + ", address=" + address + "]";
+	public String getName() {
+		return name;
 	}
 
-	public Person(String name, String gender, Address address) {
-		super();
+	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
 		this.gender = gender;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+	
 
 	
 	

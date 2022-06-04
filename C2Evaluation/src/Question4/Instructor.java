@@ -11,10 +11,22 @@ public class Instructor extends Person {
 		return "Instructor [instructorId=" + instructorId + ", salary=" + salary + "]";
 	}
 
-	public Instructor(String name, String gender, Address address, int instructorId, int salary) {
-		super(name, gender, address);
+	public int getInstructorId() {
+		return instructorId;
+	}
+
+	public void setInstructorId(int instructorId) {
 		this.instructorId = instructorId;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
 		this.salary = salary;
 	}
+
+	
 	
 }

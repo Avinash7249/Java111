@@ -3,8 +3,8 @@ package Question3;
 public class Car {
 
 	
-	int numberOfPassenger ;
-	int numberOfKms;
+	private int numberOfPassenger ;
+	private int numberOfKms;
 	
 	public int getNumberOfPassenger() {
 		return numberOfPassenger;
@@ -19,6 +19,9 @@ public class Car {
 		this.numberOfKms = numberOfKms;
 	}
 	
+	public Car() {
+		
+	}
 	
 	
 	

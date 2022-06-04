@@ -11,7 +11,8 @@ import java.util.Scanner;
 		Scanner sc=new Scanner(System.in);
 		
 		
-		
+		for(int i=0;i<2;i++) {
+			sc.nextLine();
 		System.out.println("Enter Name");
 		String name=sc.nextLine();
 		student.setName(name);
@@ -23,11 +24,11 @@ import java.util.Scanner;
 		System.out.println("Enter Marks");
 		int marks=sc.nextInt();
 		student.setMarks(marks);
-		//Student student=new Student(name,roll,marks);
+		
 		
       student.displayDetails(student);
-      //System.out.println(student);
-      
+		}
+		sc.close();
 	}
 
 }
