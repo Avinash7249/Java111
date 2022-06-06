@@ -8,12 +8,9 @@ public class AllStudents {
 		
        Scanner sc=new Scanner(System.in);
 		
-
-			
 			System.out.println("Enter Name");
 			String name=sc.nextLine();
 			
-			//sc.nextLine();
 			System.out.println("Enter Address");
 			String address=sc.nextLine();
 			
@@ -31,27 +28,17 @@ public class AllStudents {
 			
 			System.out.println("Enter Name");
 			String name1=sc.nextLine();
-			
-			//sc.nextLine();
+	
 			System.out.println("Enter Address");
 			String address1=sc.nextLine();
 
-			
 			System.out.println("Enter history Marks");
 			int history=sc.nextInt();
 			
 			System.out.println("Enter civics Marks");
 			int civics=sc.nextInt();
 		
-		
-		
-		
-		
-		
-		
 		HistoryStudent history1=new HistoryStudent(name1,address1,history,civics);
-		
-		
 		
 			System.out.println(history1.getPercentage());
 

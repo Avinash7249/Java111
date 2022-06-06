@@ -11,7 +11,7 @@ public class Area extends Shape {
 
 	@Override
 	public int squareArea(int side) {
-		// TODO Auto-generated method stub
+		
 		System.out.println(4*side);
 		return 0;
 	}
