@@ -39,8 +39,6 @@ public class Demo {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		
-			
 			System.out.println("Enter your date of birth in dd-MM-yyyy format");
 			
 			String dob = sc.next();

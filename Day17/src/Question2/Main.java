@@ -3,13 +3,14 @@ package Question2;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class Main {
 
 	public static void main(String[] args) {
+		
 		PlayList p=new PlayList();
-		List<PlayList> list = new ArrayList<>();
+		
+		
+		
         Song s1=new Song("RRR", "FFF");
 		
 		Song s2=new Song("Superman", "ggg");
@@ -22,10 +23,12 @@ public class Main {
 		p.addSong(s1);
 		p.addSong(s2);
 		p.addSong(s1);
-		s1.play();
-		s2.play();
-		s3.play();
-		s4.play();
+		
+		List<Song> newsong=p.songs;
+		for(Song s:newsong) {
+			s.play();
+		}
+		
 	}
 
 }

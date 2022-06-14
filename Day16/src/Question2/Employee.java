@@ -3,7 +3,11 @@ package Question2;
 public class Employee {
 
 	
-	 private int empId;
+	 @Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + ", salary=" + salary + "]";
+	}
+	private int empId;
 	 private String  empName;
 	 private double  salary ;
 	 

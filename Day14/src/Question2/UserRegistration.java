@@ -28,9 +28,9 @@ public class UserRegistration {
         System.out.println("Enter Your Country:");
         String country=sc.nextLine();
         
-		
 			ur.registerUser(name, country);
-		} catch (InvalidCountryException e) {
+		} 
+        catch (InvalidCountryException e) {
 			 System.out.println(e.getMessage());
 			
 		}

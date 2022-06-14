@@ -2,13 +2,15 @@ package Question2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 import Question1.Product;
 
 public class Main {
 
 	public static void main(String[] args) {
-		ArrayList<Employee> employees = new ArrayList<>();
+		
+		TreeSet<Employee> employees = new TreeSet<>(new SortSalary());
 
 		Scanner sc=new Scanner(System.in);
 		
@@ -27,6 +29,10 @@ public class Main {
 			employees.add(Employee);
 
 			
+		}
+		
+		for(Employee e:employees) {
+			System.out.println(e);
 		}
 	}
 
