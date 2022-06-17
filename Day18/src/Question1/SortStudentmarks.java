@@ -1,20 +1,29 @@
 package Question1;
 
 import java.util.Comparator;
+import java.util.Map;
+import java.util.Map.Entry;
 
-public class SortStudentmarks implements Comparator<Student>{
+public class SortStudentmarks implements Comparator<Map.Entry<String, Student>>{
+
+	
 
 	@Override
-	public int compare(Student s1, Student s2) {
+	public int compare(Entry<String, Student> o1, Entry<String, Student> o2) {
 		
-		if(s1.getMarks() > s2.getMarks())
-			return +1;
-			else if(s1.getMarks() < s2.getMarks())
+		Student s1=o1.getValue();
+		Student s2=o2.getValue();
+		
+		if(s1.getMarks()>s2.getMarks()) {
+			return 1;
+		}
+		else if(s1.getMarks()<s2.getMarks()) {
 			return -1;
-			else
+		}
+		else {
 			return 0;
-		
-	
+			
+		}
 	}
 
 }

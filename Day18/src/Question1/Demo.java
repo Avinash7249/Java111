@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Demo {
 
@@ -22,17 +23,19 @@ public class Demo {
 		student.put("Haryana",new Student(16,"Dinesh",910));
 		student.put("Kerla",new Student(18,"Srinu",880));
 
+		Set<Map.Entry<String, Student>> studentset=student.entrySet() ;
+		
+		Set<Map.Entry<String, Student>> stTree=new TreeSet(new SortStudentmarks());
+		
+		for(Map.Entry<String, Student> s :studentset) {
+			stTree.add(s);
+		}
 		
 		
-		Collection<Student> cols = student.values();
 		
-		List<Student> students = new ArrayList<>(cols);
-		
-		Collections.sort(students, new SortStudentmarks());
-		
-		for(Student student1:students){
+		for(Map.Entry<String, Student> student1:stTree){
 
-			System.out.println(student1);
+			System.out.println(student1.getKey()+"------"+student1.getValue());
 		System.out.println("=========================");
 		}
 
