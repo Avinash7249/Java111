@@ -1,4 +1,4 @@
-package Questio1;
+package Question2;
 
 // if thread A is reading data from the linked list and another thread B is trying to delete the
 //same data.This process leads to a race condition that may result in run time error.

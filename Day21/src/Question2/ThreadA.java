@@ -1,4 +1,4 @@
-package Questio1;
+package Question2;
 
 public class ThreadA implements Runnable{
 
