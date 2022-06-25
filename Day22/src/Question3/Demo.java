@@ -4,46 +4,45 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Demo {
 	
 	
-	public static void readFiles(File f,String name) {
-		
-		File[] files= f.listFiles();
-		
-		for(File file:files) {
-			if(file.isDirectory())
-				readFiles(file, name);
-			else
-				if(file.getName().equals(name)) {
-					
-				};
-			
-		}
+	public static void main(String[] args) throws IOException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the file name");
+		String filename = sc.nextLine();
+		System.out.println("Enter the character to be counted");
+		char needle = sc.nextLine().charAt(0);
 		
 		
-	}
 	
-	public static void main(String[] args) throws IOException  {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-		File f1=new File("src/Question3/xyz.txt");
-		f1.createNewFile();
-//		System.out.println("Enter file name");
-//		String name1= br.readLine();
-//		
-//		System.out.println("Enter letter");
-//		String name= br.readLine();
-//		
-		File f= new File("C:\\Ireshs");
+		File file = new File(filename);
+		int charCount = 0;
 		
-		String r = "abc.txt";
-		readFiles(f,r);
+		BufferedReader br = new BufferedReader(new FileReader(filename));
 		
+		int ch;
+		do {
+			ch = br.read();
+			
+			if (ch >= 65 && ch <= 90) ch += 32;
+			if (needle >= 65 && needle <= 90) needle += 32;
+			
+			if (ch == needle)
+				charCount++;
+		} while (ch != -1);
+				
+		System.out.println("File '" + filename + "' has " +
+				charCount + " instances of letter '" + needle + "'.");
 		
-		
+		br.close();
+		sc.close();
 	}
 }
 
