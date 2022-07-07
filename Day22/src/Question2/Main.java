@@ -10,7 +10,7 @@ public class Main {
 		
 		
 		
-		FileReader fr1=new FileReader("C:\\Ireshs\\abc.txt");
+		FileReader fr1=new FileReader("xyz.txt");
 		int i=fr1.read();
 		while( i != -1) {
 		System.out.print((char) i);
