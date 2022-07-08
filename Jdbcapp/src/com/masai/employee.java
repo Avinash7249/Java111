@@ -44,8 +44,18 @@ public class employee {
 		String sc1="jdbc:mysql://localhost:3306/sb101db";
 		try(Connection con=DriverManager.getConnection(sc1, "root", "root")) {
 			
-			
-			
+//			String s="create table emp2"
+//					
+//			+ "("
+//            + " eid int primary key,"
+//            + " name varchar(15),"
+//            + " address varchar(15),"
+//            + " salary int"
+//            + ")";
+//			PreparedStatement pst=con.prepareStatement("insert into employee(eid,name,salary) values(?,?,?)");
+//		    pst.setInt(1, 10);
+//		    pst.setString(2, "pinku");
+//		    pst.setInt(3, 100000);			
 			PreparedStatement pst=con.prepareStatement("insert into employee values(?,?,?,?)");
 			pst.setInt(1, id);
 			pst.setString(2,name);
