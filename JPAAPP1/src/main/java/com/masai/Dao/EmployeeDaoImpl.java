@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import com.masai.bean.Employee;
 import com.masai.util.DBUtil;
@@ -120,6 +121,23 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 		
 		em.getTransaction().commit();
+		
+		return emp;
+	}
+
+	@Override
+	public List<Employee> getAllEmployeeDetails() {
+		
+		
+		List<Employee> emp=new ArrayList<>();
+		
+		EntityManager entityManager=DBUtil.ProvideConnection();
+		
+		Query w=entityManager.createQuery("from Employee");
+		
+		emp=w.getResultList();
+		
+		entityManager.close();
 		
 		return emp;
 	}

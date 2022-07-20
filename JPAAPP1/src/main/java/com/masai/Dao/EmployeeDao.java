@@ -10,6 +10,8 @@ public interface EmployeeDao {
 	
 	
 	public List<Employee> getAllEmployee(int empId);
+	
+	public List<Employee> getAllEmployeeDetails();
 
 	public String getAddressOfEmployee(int empId);
 
