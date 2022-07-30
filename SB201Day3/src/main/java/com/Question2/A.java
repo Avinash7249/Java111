@@ -9,7 +9,7 @@ public class A {
 	this.theMap = theMap;
 	}
 	public void show() {
-	System.out.println("inside showA of A ");
+	
 	System.out.println(theMap);
 	}
 	}

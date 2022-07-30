@@ -69,11 +69,22 @@ https://www.springframework.org/schema/beans/spring-beans.xsd">
 <bean id="maid" class="com.Question2.A">
 <property name="theMap">
 <map>
-<entry key-ref="M1" value="NIT"/>
-<entry key-ref="M2" value="GIET"/>
-<entry key-ref="M3" value="AMITY"/>
+<entry key-ref="M1" value="solapur"/>
+<entry key-ref="M2" value="Pune"/>
+<entry key-ref="M3" value="Gujarat"/>
 </map>
 </property>
 </bean>
+
+
+
+
+
+
+
+
+
+
+
 
 </beans>
