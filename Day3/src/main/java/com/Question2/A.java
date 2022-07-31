@@ -1,20 +1,21 @@
 package com.Question2;
 
 import java.util.Map;
-@Bean(value = "map")
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Service;
+
+@Service(value="a")
 public class A {
 	
-	
-	public Map <Student, String> theMap(){
-		 
-	 }
+	@Autowired
+	public Map <Student, String> theMap;
 
-	private Map<Student, String> theMap;
-	public void setTheMap(Map<Student,String> theMap) {
-	this.theMap = theMap;
-	}
+	
 	public void show() {
 	
 	System.out.println(theMap);
+	
 	}
 	}
