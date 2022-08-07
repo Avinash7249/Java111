@@ -1,12 +1,16 @@
 package com.masai.exception;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 @ControllerAdvice
 
@@ -14,38 +18,53 @@ public class GlobalExceptionHandler {
 	
 	
 	//to handle specific ProductNotFoundException
+	
 	@ExceptionHandler(ProductNotFound.class)
-	public void myIllegalHandler(HttpServletResponse resp,ProductNotFound ie) throws IOException {
+	public ResponseEntity<MyErrorDetails> myIllegalHandler(ProductNotFound ie,WebRequest req) {
 	System.out.println("inside myHandler method...");
-	resp.sendError(HttpStatus.BAD_REQUEST.value(),ie.getMessage());
+	MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(), ie.getMessage(), req.getDescription(false));
+	ResponseEntity<MyErrorDetails> re=new ResponseEntity<>(err,HttpStatus.BAD_REQUEST);
+	return re;
 	}
+	
+	
 	
 	//to handle specific NullValueerrorException
-	@ExceptionHandler(NullValueerror.class)
-	public void myIllegalHandler(HttpServletResponse resp,NullValueerror ie) throws IOException {
-	System.out.println("inside myHandler method...");
-	resp.sendError(HttpStatus.BAD_REQUEST.value(),ie.getMessage());
-	}
 	
+	@ExceptionHandler(NullValueerror.class)
+	public ResponseEntity<MyErrorDetails> myIllegalHandler(NullValueerror ie,WebRequest req) {
+	System.out.println("inside myHandler method...");
+	MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(), ie.getMessage(), req.getDescription(false));
+	ResponseEntity<MyErrorDetails> re=new ResponseEntity<>(err,HttpStatus.BAD_REQUEST);
+	return re;
+	}
 	
 	
 	
 	//to handle specific InvalidURIException
+	
 		@ExceptionHandler(InvalidURIException.class)
-		public void myIllegalHandler(HttpServletResponse resp,InvalidURIException ie) throws IOException {
+		public ResponseEntity<MyErrorDetails> myIllegalHandler(InvalidURIException ie,WebRequest req) {
 		System.out.println("inside myHandler method...");
-		resp.sendError(HttpStatus.BAD_REQUEST.value(),ie.getMessage());
+		MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(), ie.getMessage(), req.getDescription(false));
+		ResponseEntity<MyErrorDetails> re=new ResponseEntity<>(err,HttpStatus.BAD_REQUEST);
+		return re;
 		}
+
 	
 	
 	
+		@ExceptionHandler(Exception.class)
+		public ResponseEntity<MyErrorDetails> myExceptionHandler(Exception e,WebRequest req) {
+		MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(), e.getMessage(), req.getDescription(false));
+		return new ResponseEntity<>(err,HttpStatus.BAD_REQUEST);
+		}
+
 	
-	
-	//to handle any other type of Exception
-	@ExceptionHandler(Exception.class)
-	public void myExceptionHandler(HttpServletResponse resp,Exception e) throws IOException {
-	System.out.println("inside myHandler method...");
-	resp.sendError(HttpStatus.BAD_REQUEST.value(),e.getMessage());
+	@ExceptionHandler(NoHandlerFoundException.class)
+	public ResponseEntity<MyErrorDetails> mynotFoundHandler(NoHandlerFoundException nfe,WebRequest req) {
+	MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(), nfe.getMessage(), req.getDescription(false));
+	return new ResponseEntity<>(err,HttpStatus.BAD_REQUEST);
 	}
 	
 
