@@ -122,13 +122,13 @@
 //
 //8. Retrieve the name of the customers who opened account after 17-NOV-95.
 //ans:
-//SELECT CNAME FROM DEPOSIT WHERE ADATE>'17-NOV-95';
+//SELECT CNAME FROM DEPOSIT WHERE ADATE >'1995-11-17';
 //
 //
 //9. Retrieve the account number and amount of the customer having account opened between
 //01-12-95 and 01-06.96.
 //SELECT CNAME,ACTNO,AMOUNT FROM DEPOSIT WHERE ADATE BETWEEN '1995-12-01' AND '1996-06-01';
-//
+//SELECT ACTNO,AMOUNT FROM DEPOSIT WHERE ADATE BETWEEN '1995-12-01' AND '1996-06-01';
 //
 //10. Retrieve all the records from the table DEPOSIT where CNAME begins
 //with C.
@@ -143,11 +143,13 @@
 //12. Retrieve all the records from the table DEPOSIT where branch name is
 //CHANDNI or MGROAD.
 //SELECT * FROM DEPOSIT  WHERE BNAME IN('CHANDNI' , 'MGROAD');
+//SELECT * FROM DEPOSIT  WHERE BNAME ='CHANDI' or BNAME ='M.G.ROAD';
+
 //
 //13. Retrieve all the records from the table DEPOSIT where branch name is not
 //CHANDNI or MGROAD.
-//SELECT * FROM DEPOSIT WHERE NOT(BNAME IN('CHANDNI' ,'MGROAD'));
-//
+//SELECT * FROM DEPOSIT WHERE NOT(BNAME IN('CHANDAI' ,'M.G.ROAD'));
+//SELECT * FROM DEPOSIT WHERE NOT(BNAME ='CHANDI' or bname='M.G.ROAD');
 //
 //
 //14. Retrieve all the records from DEPOSIT where amount > 1000 and arrange the customer name in
@@ -156,19 +158,19 @@
 //
 //15. Retrieve all the records from DEPOSIT where amount > 1000 and arrange the customer name in
 //descending order.
-//SELECT * FROM DEPOSIT_1929302 WHERE AMOUNT>1000 ORDER BY CNAME DESC:
+//SELECT * FROM DEPOSIT WHERE AMOUNT>1000 ORDER BY CNAME DESC;
 //
 //16. Retrieve customer details from BORROW table where the third character of
 //the customer name is either ‘A’ or ‘D’.
-//SELECT * FROM BORROW  WHERE CNAME LIKE ' A%' OR CNAME LIKE ' D%';
 //
+//SELECT * FROM BORROW  WHERE CNAME LIKE '__A%' OR CNAME LIKE '__D%';
 //
 //17. Retrieve all the records from the table BORROW where amount is not
 //between 2000 and 8000.
-//SELECT * FROM BORROW_1929302 WHERE NOT(AMOUNT BETWEEN 2000 AND8000);
+//SELECT * FROM BORROW WHERE NOT(AMOUNT BETWEEN 2000 AND 8000);
 //
 //18. Find out the unique records from the table DEPOSIT
-//SELECT DISTINCT ACTNO,CNAME,BNAME,AMOUNT,ADATE FROM DEPOSIT;
+//SELECT DISTINCT BNAME FROM DEPOSIT;
 //
 //
 //
@@ -181,19 +183,4 @@
 //branch is VRCE and customer name ANIL.
 //
 //UPDATE DEPOSIT SET AMOUNT=AMOUNT*0.1 WHERE BNAME='VRCE' AND CNAME='ANIL';
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//}
+
